@@ -6,4 +6,6 @@ var config = require('./config/config-local.json');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+console.log('Hello, Discord Du Cul !');
+
 bot.login(config.robot.token);
