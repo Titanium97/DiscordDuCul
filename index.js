@@ -8,13 +8,16 @@ const bot = new Discord.Client();
 
 console.log('Hello, Discord Du Cul !');
 
+//Login
+console.log('Logging in...');
 bot.login(config.robot.token);
+console.log('Logged in !');
 
 //Incomming messsage event
 bot.on('message', message =>
 {
     if(message.content === "_ping")
     {
-        message.reply("Du cul !")
+        message.reply("Pong du cul !")
     }
 })

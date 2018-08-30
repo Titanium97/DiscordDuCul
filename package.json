@@ -1,7 +1,7 @@
 {
   "name": "discordducul",
   "version": "1.0.0",
-  "description": "Copie du Bot Twitter du cul",
+  "description": "Copy of @BotDuCul on Twitter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Titanium97/DiscordDuCul.git"
   },
-  "author": "rompouce7 & qtipee",
+  "author": "Titanium97 & qtipee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Titanium97/DiscordDuCul/issues"
