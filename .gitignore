@@ -1,4 +1,6 @@
 /node_modules
+
 config/config-local.json
 config-local.json
+
 /nbproject

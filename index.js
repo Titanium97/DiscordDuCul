@@ -1,20 +1,34 @@
-//The config file is not part of the repository because
-//your robot token must be kept secret.
-var config = require('./config/config-local.json');
-var fs = require('fs');
+/***
+ * DiscordDuCul
+ * ------------
+ * 
+ * Note : The config file is not part of the repository because
+ *        your robot token must be kept secret.
+ */
 
-const COMMAND_PREFIX = '_';
-//const WORDS_COUNT = 22740;
+/*
+ * Configuration
+ */
 
-//Discord API
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const config_local = require('./config/config-local.json');
+const config = require('./config/config.json');
 
-console.log('Hello, Discord Du Cul !');
+/*
+ * Load modules
+ */
+
+const fs = require('fs');
+const discord = require('discord.js');
+
+/*
+ * Use Discord API
+ */
+
+const bot = new discord.Client();
 
 //Login
 console.log('Logging in...');
-bot.login(config.robot.token);
+bot.login(config_local.robot.token);
 console.log('Logged in !');
 
 //Incomming message event
@@ -25,7 +39,7 @@ bot.on('message', message =>
         return;
 
     //Ignore non-command messages
-    if (!message.content.startsWith(COMMAND_PREFIX))
+    if (!message.content.startsWith(config.prefix))
         return;
 
     //Log
@@ -33,7 +47,7 @@ bot.on('message', message =>
 
     //Separate command and args
     const command = message.content.substr(1);
-    const arguments = message.content.slice(COMMAND_PREFIX.length);
+    const arguments = message.content.slice(config.prefix.length);
 
     switch (command)
     {
@@ -41,19 +55,26 @@ bot.on('message', message =>
             message.reply("Pong du cul !");
             break;
         case "ducul" :
-            message.reply(getRandomLine().trim() + " du cul");
+            message.reply(getRandomLine() + " du cul");
             break;
         case "demerde" :
-            message.reply(getRandomLine().trim() + " de merde");
+            message.reply(getRandomLine() + " de merde");
             break;
         case "detesmorts" :
-            message.reply(getRandomLine().trim() + " de tes morts");
+            message.reply(getRandomLine() + " de tes morts");
             break;
     }
 });
 
-//Get a random line from de dictionnary
+/*
+ * Functions
+ */
+
+/***
+ * Get a random line from dictionnary
+ * @returns Random String from dictionnary
+ */
 function getRandomLine() {
-    var lines = fs.readFileSync('./config/words_fr.txt').toString().split("\n");
-    return lines[Math.floor(Math.random() * lines.length)];
+    var lines = fs.readFileSync('./config/'+config.dictionnary).toString().split("\n");
+    return lines[Math.floor(Math.random() * lines.length)].trim();
 };
