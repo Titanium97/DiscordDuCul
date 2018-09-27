@@ -1,5 +1,5 @@
 # DiscordDuCul
-Copy of this Twitter bot -> https://twitter.com/BotDuCul
+Discord bot with funny commands
 
 # Setup your local nodes.js environment
 npm init
