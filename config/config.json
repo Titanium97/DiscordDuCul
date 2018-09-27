@@ -1,4 +1,6 @@
 { 
     "prefix" : "_",
-    "dictionnary" : "words_fr.txt"
+    "dictionnary" : "words_fr2.txt",
+    
+    "crystal" : ["Oui", "Non", "Peut-être", "Sûrement", "Evidemment", "Presque", "Probablement", "Eventuellement"]
 }

@@ -46,8 +46,9 @@ bot.on('message', message =>
     console.log(message.author + ' sent \'' + message.content + '\'');
 
     //Separate command and args
-    const command = message.content.substr(1);
-    const arguments = message.content.slice(config.prefix.length);
+    var arguments = message.content.split(" ");
+    const command = arguments[0].substr(config.prefix.length).trim();
+    arguments.shift();
 
     switch (command)
     {
@@ -62,6 +63,9 @@ bot.on('message', message =>
             break;
         case "detesmorts" :
             message.reply(getRandomLine() + " de tes morts");
+            break;
+        case "crystalball" :
+            message.reply(message.content.substr(command.length)+", "+crystallBall()+"...");
             break;
     }
 });
@@ -78,3 +82,7 @@ function getRandomLine() {
     var lines = fs.readFileSync('./config/'+config.dictionnary).toString().split("\n");
     return lines[Math.floor(Math.random() * lines.length)].trim();
 };
+
+function crystallBall() {
+    return config.crystal[Math.floor(Math.random() * config.crystal.length)];
+}
