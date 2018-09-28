@@ -1,7 +1,7 @@
 /***
  * DiscordDuCul
  * ------------
- * 
+ *
  * Note : The config file is not part of the repository because
  *        your robot token must be kept secret.
  */
@@ -56,16 +56,16 @@ bot.on('message', message =>
             message.reply("Pong du cul !");
             break;
         case "ducul" :
-            message.reply(getRandomLine() + " du cul");
+            message.channel.sendMessage(getRandomLine() + " du cul");
             break;
         case "demerde" :
-            message.reply(getRandomLine() + " de merde");
+            message.channel.sendMessage(getRandomLine() + " de merde");
             break;
         case "detesmorts" :
-            message.reply(getRandomLine() + " de tes morts");
+            message.channel.sendMessage(getRandomLine() + " de tes morts");
             break;
         case "crystalball" :
-            message.reply(message.content.substr(command.length)+", "+crystallBall()+"...");
+            message.reply(message.content.substr(command.length+1)+", "+crystallBall()+"...");
             break;
     }
 });
