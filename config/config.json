@@ -1,6 +1,6 @@
 {
     "prefix" : "_",
     "dictionnary" : "words_fr2.txt",
-
+    "unknown_command" : "Commande non-reconnue :sad:";
     "answers" : ["Oui", "Non", "Peut-être", "Sûrement", "Evidemment", "Presque", "Probablement", "Eventuellement"]
 }

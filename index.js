@@ -71,6 +71,8 @@ bot.on('message', message =>
             message.channel.sendMessage("Oh no...");
             process.exit();
             break;
+        default :
+            message.channel.sendMessage(config.unknown_command);
     }
 });
 
