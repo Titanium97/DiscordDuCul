@@ -84,5 +84,5 @@ function getRandomLine() {
 };
 
 function crystallBall() {
-    return config.answers[Math.floor(Math.random() * config.crystal.length)];
+    return config.answers[Math.floor(Math.random() * config.answers.length)];
 }
