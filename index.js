@@ -64,7 +64,7 @@ bot.on('message', message =>
         case "detesmorts" :
             message.channel.sendMessage(getRandomLine() + " de tes morts");
             break;
-        case "crystalball" :
+        case "question" :
             message.reply(message.content.substr(command.length+1)+", "+crystallBall()+"...");
             break;
     }
@@ -84,5 +84,5 @@ function getRandomLine() {
 };
 
 function crystallBall() {
-    return config.crystal[Math.floor(Math.random() * config.crystal.length)];
+    return config.answers[Math.floor(Math.random() * config.crystal.length)];
 }
