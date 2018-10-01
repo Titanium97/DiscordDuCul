@@ -1,6 +1,9 @@
 {
     "prefix" : "_",
     "dictionnary" : "words_fr2.txt",
+
+    "answers" : ["Oui", "Non", "Peut-être", "Sûrement", "Evidemment", "Presque", "Probablement", "Eventuellement"],
+
     "unknown_command" : "Commande non-reconnue :cry:",
-    "answers" : ["Oui", "Non", "Peut-être", "Sûrement", "Evidemment", "Presque", "Probablement", "Eventuellement"]
+    "missing_argument" : "Il manque des arguments..."
 }

@@ -45,6 +45,9 @@ bot.on('message', message =>
     //Log
     console.log(message.author + ' sent \'' + message.content + '\'');
 
+    //Get usefull information
+    var serverId = message.guild.id;
+
     //Separate command and args
     var arguments = message.content.split(" ");
     const command = arguments[0].substr(config.prefix.length).trim();
@@ -56,23 +59,27 @@ bot.on('message', message =>
             message.reply("Pong du cul !");
             break;
         case "ducul" :
-            message.channel.sendMessage(getRandomLine() + " du cul");
+        case "cul" :
+            message.channel.send(getRandomLine() + " du cul");
             break;
         case "demerde" :
-            message.channel.sendMessage(getRandomLine() + " de merde");
+        case "merde" :
+            message.channel.send(getRandomLine() + " de merde");
             break;
         case "detesmorts" :
-            message.channel.sendMessage(getRandomLine() + " de tes morts");
+        case "morts" :
+            message.channel.send(getRandomLine() + " de tes morts");
             break;
         case "question" :
+        case "q" :
             message.reply(message.content.substr(command.length+1)+", "+crystallBall()+"...");
             break;
         case "fuckingragequit" :
-            message.channel.sendMessage("Oh no...");
+            message.channel.send("Oh no...");
             process.exit();
             break;
         default :
-            message.channel.sendMessage(config.unknown_command);
+            message.channel.send(config.unknown_command);
     }
 });
 
