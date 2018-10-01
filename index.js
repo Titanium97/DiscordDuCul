@@ -67,6 +67,10 @@ bot.on('message', message =>
         case "question" :
             message.reply(message.content.substr(command.length+1)+", "+crystallBall()+"...");
             break;
+        case "fuckingragequit" :
+            message.channel.sendMessage("Oh no...");
+            process.exit();
+            break;
     }
 });
 
