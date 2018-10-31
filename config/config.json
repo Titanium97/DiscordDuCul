@@ -4,6 +4,8 @@
 
     "answers" : ["Oui", "Non", "Peut-être", "Sûrement", "Evidemment", "Presque", "Probablement", "Eventuellement"],
 
+    "xp" : { "cul" : 10, "merde" : 10, "morts" : 10, "question" : 15},
+
     "unknown_command" : "Commande non-reconnue :cry:",
     "missing_argument" : "Il manque des arguments..."
 }
